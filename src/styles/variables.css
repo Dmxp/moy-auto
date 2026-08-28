@@ -1,0 +1,18 @@
+:root {
+  --color-bg: #171819;
+  --color-bg-secondary: #202223;
+  --color-bg-light: #292b2d;
+
+  --color-lime: #b6e600;
+  --color-yellow: #ffd21f;
+  --color-orange: #ff7a00;
+
+  --color-white: #f5f5f5;
+  --color-gray: #a5a5a5;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  --container-width: 1400px;
+
+  --transition: 0.3s ease;
+}

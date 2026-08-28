@@ -1,0 +1,333 @@
+.store {
+  position: relative;
+
+  padding: 130px 0;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(182, 230, 0, 0.08),
+      transparent 30%
+    ),
+    #171819;
+}
+
+.store__wrapper {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+/* =========================
+   ТЕКСТ
+========================= */
+
+.store__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: var(--color-lime);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+.store__title {
+  max-width: 650px;
+
+  font-size: clamp(42px, 5vw, 74px);
+  font-weight: 900;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+}
+
+.store__title span {
+  color: var(--color-yellow);
+}
+
+.store__description {
+  max-width: 570px;
+
+  margin-top: 28px;
+
+  color: var(--color-gray);
+
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+/* =========================
+   ПРЕИМУЩЕСТВА
+========================= */
+
+.store__advantages {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+
+  margin-top: 42px;
+}
+
+.store__advantage {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+}
+
+.store__advantage-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(182, 230, 0, 0.1);
+
+  color: var(--color-lime);
+
+  border:
+    1px solid rgba(182, 230, 0, 0.15);
+}
+
+.store__advantage h3 {
+  margin-top: 2px;
+
+  color: var(--color-white);
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.store__advantage p {
+  margin-top: 6px;
+
+  color: var(--color-gray);
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================
+   КНОПКА
+========================= */
+
+.store__button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 42px;
+
+  padding: 17px 26px;
+
+  border-radius: 100px;
+
+  background: var(--color-lime);
+
+  color: #171819;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.store__button:hover {
+  transform: translateY(-4px);
+
+  background: var(--color-yellow);
+
+  box-shadow:
+    0 14px 35px
+    rgba(182, 230, 0, 0.18);
+}
+
+/* =========================
+   ИЗОБРАЖЕНИЕ
+========================= */
+
+.store__visual {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 620px;
+}
+
+.store__visual::before {
+  content: '';
+
+  position: absolute;
+
+  width: 75%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(182, 230, 0, 0.12);
+}
+
+.store__visual::after {
+  content: '';
+
+  position: absolute;
+
+  width: 58%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255, 210, 31, 0.12);
+}
+
+.store__glow {
+  position: absolute;
+
+  width: 70%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(182, 230, 0, 0.18),
+      transparent 70%
+    );
+
+  filter: blur(30px);
+}
+
+.store__visual img {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 680px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 30px 40px
+      rgba(0, 0, 0, 0.4)
+    );
+}
+
+/* =========================
+   БЕЙДЖ
+========================= */
+
+.store__visual-badge {
+  position: absolute;
+
+  z-index: 3;
+
+  right: 20px;
+  bottom: 80px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 13px 18px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 100px;
+
+  background:
+    rgba(30, 32, 33, 0.75);
+
+  color: var(--color-white);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  backdrop-filter: blur(14px);
+}
+
+.store__visual-badge svg {
+  color: var(--color-lime);
+}
+
+/* =========================
+   АДАПТИВ
+========================= */
+
+@media (max-width: 1000px) {
+  .store__wrapper {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .store__content {
+    max-width: 700px;
+  }
+
+  .store__visual {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 650px) {
+  .store {
+    padding: 85px 0;
+  }
+
+  .store__title {
+    font-size: clamp(40px, 12vw, 60px);
+  }
+
+  .store__description {
+    font-size: 16px;
+  }
+
+  .store__advantages {
+    gap: 18px;
+  }
+
+  .store__visual {
+    min-height: 380px;
+  }
+
+  .store__visual-badge {
+    right: 0;
+    bottom: 20px;
+  }
+}

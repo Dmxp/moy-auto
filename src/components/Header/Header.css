@@ -1,0 +1,285 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  border-bottom: 1px solid var(--color-border);
+
+  background: rgba(23, 24, 25, 0.78);
+  backdrop-filter: blur(14px);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 88px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+
+  font-size: 28px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -1px;
+}
+
+.header__logo-my {
+  color: var(--color-white);
+}
+
+.header__logo-auto {
+  margin-left: 6px;
+  color: var(--color-yellow);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.header__link {
+  position: relative;
+
+  color: var(--color-gray);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: color var(--transition);
+}
+
+.header__link:hover {
+  color: var(--color-white);
+}
+
+.header__link--active {
+  color: var(--color-white);
+}
+
+.header__link--active::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  bottom: -10px;
+
+  width: 100%;
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: var(--color-lime);
+}
+
+.header__phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 13px 20px;
+
+  border-radius: 100px;
+
+  background: var(--color-lime);
+  color: #151515;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  transition:
+    transform var(--transition),
+    background var(--transition);
+}
+
+.header__phone:hover {
+  transform: translateY(-2px);
+  background: var(--color-yellow);
+}
+
+.header__menu {
+  display: none;
+
+  background: transparent;
+  color: var(--color-white);
+}
+
+@media (max-width: 900px) {
+  .header__nav,
+  .header__phone {
+    display: none;
+  }
+
+  .header__menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__container {
+    height: 72px;
+  }
+
+  .header__logo {
+    font-size: 23px;
+  }
+}
+/* ========================================
+   АКТИВНАЯ НАВИГАЦИЯ
+======================================== */
+
+.header__link {
+  position: relative;
+}
+
+.header__link::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: var(--color-lime);
+
+  transition: width 0.3s ease;
+}
+
+.header__link:hover::after,
+.header__link--active::after {
+  width: 100%;
+}
+
+/* ========================================
+   МОБИЛЬНОЕ МЕНЮ
+======================================== */
+
+.header__mobile-menu {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 16px;
+  right: 16px;
+
+  z-index: 100;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 24px;
+
+  background:
+    rgba(25, 27, 28, 0.97);
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(18px);
+}
+
+.header__mobile-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.header__mobile-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 16px;
+
+  border-radius: 14px;
+
+  color: var(--color-white);
+
+  font-size: 18px;
+  font-weight: 750;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.header__mobile-link span {
+  width: 28px;
+
+  color: var(--color-lime);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.header__mobile-link:hover,
+.header__mobile-link--active {
+  background:
+    rgba(182, 230, 0, 0.08);
+
+  color: var(--color-lime);
+}
+
+.header__mobile-phone {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 14px;
+  padding: 16px;
+
+  border-radius: 14px;
+
+  background: var(--color-lime);
+
+  color: #171819;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* ========================================
+   DESKTOP / MOBILE
+======================================== */
+
+.header__mobile-menu {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .header__nav,
+  .header__phone {
+    display: none;
+  }
+
+  .header__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__mobile-menu {
+    display: block;
+  }
+}
